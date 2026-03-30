@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10" alignment="CENTER"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="gestion.controller.EtudiantController">
+
+    <TextField fx:id="nomField" promptText="Nom"/>
+    <TextField fx:id="prenomField" promptText="Prénom"/>
+
+    <Button text="Ajouter" onAction="#ajouterEtudiant"/>
+
+    <TableView fx:id="table">
+        <columns>
+            <TableColumn fx:id="colId" text="ID"/>
+            <TableColumn fx:id="colNom" text="Nom"/>
+            <TableColumn fx:id="colPrenom" text="Prénom"/>
+        </columns>
+    </TableView>
+
+</VBox>
