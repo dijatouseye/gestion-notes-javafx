@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="gestion.controller.AccueilController"
+      spacing="30" alignment="CENTER"
+      style="-fx-padding:50; -fx-background-color: #f5f5f5;">
+
+    <!-- Titre -->
+    <Label text="Bienvenue sur la Gestion des Notes"
+           style="-fx-font-size:28px; -fx-font-weight:bold; -fx-text-fill:#2c3e50;"/>
+
+    <!-- Sous-titre -->
+    <Label text="Sélectionnez une option pour commencer"
+           style="-fx-font-size:16px; -fx-text-fill:#34495e;"/>
+
+    <!-- Boutons principaux -->
+    <VBox spacing="15" alignment="CENTER">
+
+        <Button text="Étudiants" onAction="#goEtudiants"
+                style="-fx-background-color:#3498db; -fx-text-fill:white; -fx-font-size:16px; -fx-padding:10 40; -fx-background-radius:10;"/>
+
+        <Button text="Matières" onAction="#goMatieres"
+                style="-fx-background-color:#2ecc71; -fx-text-fill:white; -fx-font-size:16px; -fx-padding:10 40; -fx-background-radius:10;"/>
+
+        <Button text="Notes" onAction="#goNotes"
+                style="-fx-background-color:#e67e22; -fx-text-fill:white; -fx-font-size:16px; -fx-padding:10 40; -fx-background-radius:10;"/>
+
+        <Button text="Résultats et Classement" onAction="#goResultats"
+                style="-fx-background-color:#9b59b6; -fx-text-fill:white; -fx-font-size:16px; -fx-padding:10 40; -fx-background-radius:10;"/>
+    </VBox>
+
+</VBox>
