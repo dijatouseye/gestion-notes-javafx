@@ -8,7 +8,7 @@ import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
 import java.io.IOException;
 
-public class AccueilController {
+public class accueilcontroller {
 
     @FXML
     private Button goEtudiants, goMatieres, goNotes, goResultats;
@@ -25,19 +25,19 @@ public class AccueilController {
         changerScene("/gestion/view/Matieres.fxml");
     }
 
-    // Méthode pour aller à la fenêtre Notes
+
     @FXML
     private void goNotes() {
         changerScene("/gestion/view/Notes.fxml");
     }
 
-    // Méthode pour aller à la fenêtre Résultats
+
     @FXML
     private void goResultats() {
         changerScene("/gestion/view/Resultats.fxml");
     }
 
-    // Fonction utilitaire pour changer de scène
+
     private void changerScene(String fxml) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
