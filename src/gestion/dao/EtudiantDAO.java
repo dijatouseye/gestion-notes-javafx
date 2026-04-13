@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EtudiantDAO {
+     ///ajouter de la classe ajouter
+
 
     public void ajouter(Etudiant e) {
         String sql = "INSERT INTO etudiant(nom, prenom) VALUES (?, ?)";
@@ -49,7 +51,6 @@ public class EtudiantDAO {
 
     public void modifier(Etudiant e) {
         String sql = "UPDATE etudiant SET nom=?, prenom=? WHERE id=?";
-
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
@@ -57,15 +58,14 @@ public class EtudiantDAO {
             ps.setString(2, e.getPrenom());
             ps.setInt(3, e.getId());
             ps.executeUpdate();
-
         } catch (Exception e1) {
             e1.printStackTrace();
         }
+        
     }
-
+    ///ajoute da la classe suprimer
     public void supprimer(int id) {
         String sql = "DELETE FROM etudiant WHERE id=?";
-
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
