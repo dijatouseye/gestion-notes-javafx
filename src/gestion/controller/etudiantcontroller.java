@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class EtudiantController {
+public class etudiantcontroller {
 
     @FXML private TableView<Etudiant> table;
     @FXML private TableColumn<Etudiant, Integer> colId;
