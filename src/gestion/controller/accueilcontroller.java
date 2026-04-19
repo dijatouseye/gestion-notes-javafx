@@ -1,50 +1,47 @@
-
 package gestion.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.stage.Stage;
-import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.scene.Parent;
+
 import java.io.IOException;
 
-public class accueilcontroller {
+public class AccueilController {
 
     @FXML
-    private Button goEtudiants, goMatieres, goNotes, goResultats;
-
-    // Méthode pour aller à la fenêtre Étudiants
-    @FXML
-    private void goEtudiants() {
-        changerScene("/gestion/view/Etudiants.fxml");
+    private void goEtudiants(ActionEvent event) {
+        changerScene(event, "View.fxml"); // ⚠️ ton fichier réel
     }
 
-    // Méthode pour aller à la fenêtre Matières
     @FXML
-    private void goMatieres() {
-        changerScene("/gestion/view/Matieres.fxml");
+    private void goMatieres(ActionEvent event) {
+        changerScene(event, "Matieres.fxml");
     }
 
-
     @FXML
-    private void goNotes() {
-        changerScene("/gestion/view/Notes.fxml");
+    private void goNotes(ActionEvent event) {
+        changerScene(event, "Notes.fxml");
     }
 
-
     @FXML
-    private void goResultats() {
-        changerScene("/gestion/view/Resultats.fxml");
+    private void goResultats(ActionEvent event) {
+        changerScene(event, "Resultats.fxml");
     }
 
-
-    private void changerScene(String fxml) {
+    private void changerScene(ActionEvent event, String fxml) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
-            Scene scene = new Scene(loader.load());
-            Stage stage = (Stage) goEtudiants.getScene().getWindow(); // récupère la fenêtre actuelle
-            stage.setScene(scene);
+            Parent root = FXMLLoader.load(
+                    getClass().getResource("/gestion/view/" + fxml)
+            );
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
             stage.show();
+
         } catch (IOException e) {
             e.printStackTrace();
         }

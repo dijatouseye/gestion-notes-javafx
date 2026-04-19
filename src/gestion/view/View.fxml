@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.VBox?>
 
-<VBox spacing="10" alignment="CENTER"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="gestion.controller.EtudiantController">
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="gestion.controller.EtudiantController">
 
-    <TextField fx:id="nomField" promptText="Nom"/>
-    <TextField fx:id="prenomField" promptText="Prénom"/>
+    <!-- MENU -->
+    <left>
+        <VBox spacing="20" style="-fx-background-color:#1f2d3d; -fx-padding:25;">
+            <Label text="🎓 App" style="-fx-text-fill:white; -fx-font-size:22; -fx-font-weight:bold;"/>
 
-    <Button text="Ajouter" onAction="#ajouterEtudiant"/>
+            <Button text="Accueil" onAction="#showAccueil" styleClass="menu"/>
+            <Button text="Étudiants" onAction="#showEtudiants" styleClass="menu"/>
+            <Button text="Matières" onAction="#showMatieres" styleClass="menu"/>
+            <Button text="Notes" onAction="#showNotes" styleClass="menu"/>
+            <Button text="Résultats" onAction="#showResultats" styleClass="menu"/>
+        </VBox>
+    </left>
 
-    <TableView fx:id="table">
-        <columns>
-            <TableColumn fx:id="colId" text="ID"/>
-            <TableColumn fx:id="colNom" text="Nom"/>
-            <TableColumn fx:id="colPrenom" text="Prénom"/>
-        </columns>
-    </TableView>
+    <!-- CONTENU -->
+    <center>
+        <VBox fx:id="contentArea" alignment="CENTER" spacing="20" style="-fx-padding:40;">
+        </VBox>
+    </center>
 
-</VBox>
+</BorderPane>
